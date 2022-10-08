@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.constant import LOGIN_PAGE_URL
+from pages.constant import URL, TEXT
 from pages.locators import LoginPageLocators
 
 class LoginPage(BasePage):
@@ -15,7 +15,7 @@ class LoginPage(BasePage):
     
     def should_be_login_url(self):
         login_url = self.browser.current_url
-        assert login_url == LOGIN_PAGE_URL, \
+        assert login_url == URL.LOGIN_PAGE_URL, \
             f"Login url is not True. URL: '{login_url}'"
     
     def should_be_container_login_form(self):
@@ -45,3 +45,9 @@ class LoginPage(BasePage):
     def go_to_password_recovery_page(self):
         link = self.browser.find_element(*LoginPageLocators.PASSWORD_RECOVERY_LINK)
         link.click()
+    
+    def do_not_enter_email(self):
+        login_input = self.browser.find_element(*LoginPageLocators.LOGIN_INPUT)
+        login_input.send_keys()
+        error_message = self.browser.find_element(*LoginPageLocators.LOGIN_ERROR_MESSAGE).text
+        assert error_message == TEXT.ERROR_MESSAGE_DO_NOT_ENTER_EMAIL, f"Wrong error message. Received message: '{error_message}'"
