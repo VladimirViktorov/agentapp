@@ -12,7 +12,6 @@ class LoginPage(BasePage):
         self.should_be_password_input()
         self.should_be_enter_button()
         self.should_be_forgot_password_button()
-        
     
     def should_be_login_url(self):
         login_url = self.browser.current_url
