@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.constant import PASSWORD_RECOVERY_PAGE_URL
+from pages.constant import URL
 from pages.locators import PasswordRecoveryPageLocators
 
 class PasswordRecoveryPage(BasePage):
@@ -16,7 +16,7 @@ class PasswordRecoveryPage(BasePage):
     
     def should_be_password_recovery_url(self):
         login_url = self.browser.current_url
-        assert login_url == PASSWORD_RECOVERY_PAGE_URL, \
+        assert login_url == URL.PASSWORD_RECOVERY_PAGE_URL, \
             f"Password recovery url is not True. URL: '{login_url}'"
     
     def should_be_login_input(self):

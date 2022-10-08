@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.constant import ENTER_PAGE_URL
+from pages.constant import URL
 from pages.locators import EnterPageLocators
 
 class EnterPage(BasePage):
@@ -18,7 +18,7 @@ class EnterPage(BasePage):
     
     def should_be_enter_url(self):
         enter_url = self.browser.current_url
-        assert enter_url == ENTER_PAGE_URL, \
+        assert enter_url == URL.ENTER_PAGE_URL, \
             f"Enter url is not True. URL: '{enter_url}'"
     
     def should_be_record_preview(self):

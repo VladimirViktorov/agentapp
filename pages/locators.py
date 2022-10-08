@@ -11,6 +11,8 @@ class LoginPageLocators():
     SHOW_PASSWORD_BUTTON = (By.XPATH, "//*[@id='password']/label/button")
     ENTER_BUTTON = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/button")
     PASSWORD_RECOVERY_LINK = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/a")
+    LOGIN_ERROR_MESSAGE = (By.XPATH, "//*[@id='username']/ui-field-error")
+    PASSWORD_ERROR_MESSAGE = (By.XPATH, "//*[@id='password']/ui-field-error")
 
 class EnterPageLocators():
     RECORD_PREVIEW = (By.XPATH, "//*[@id='rec323763270']")
