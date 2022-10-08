@@ -36,7 +36,7 @@ class PasswordRecoveryPage(BasePage):
             "Send button is not presented"
     
     def should_be_enter_button(self):
-        assert self.is_element_present(*PasswordRecoveryPageLocators.ENTER_BUTTON), \
+        assert self.is_element_present(*PasswordRecoveryPageLocators.LOGIN_LINK), \
             "Enter button is not presented"
     
     def should_not_be_repeat_button(self):
@@ -47,3 +47,6 @@ class PasswordRecoveryPage(BasePage):
         assert self.is_not_element_present(*PasswordRecoveryPageLocators.VERIFICATION_CODE_INPUT), \
             "Verification code input is presented, but should not be"
     
+    def go_to_login_page(self):
+        link = self.browser.find_element(*PasswordRecoveryPageLocators.LOGIN_LINK)
+        link.click()

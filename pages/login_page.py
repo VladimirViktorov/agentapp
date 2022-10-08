@@ -39,5 +39,9 @@ class LoginPage(BasePage):
             "Enter button is not presented"
     
     def should_be_forgot_password_button(self):
-        assert self.is_element_present(*LoginPageLocators.FORGOT_PASSWORD_BUTTON), \
+        assert self.is_element_present(*LoginPageLocators.PASSWORD_RECOVERY_LINK), \
             "Forgot password button is not presented"
+    
+    def go_to_password_recovery_page(self):
+        link = self.browser.find_element(*LoginPageLocators.PASSWORD_RECOVERY_LINK)
+        link.click()

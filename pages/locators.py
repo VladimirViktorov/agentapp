@@ -10,7 +10,7 @@ class LoginPageLocators():
     PASSWORD_INPUT = (By.XPATH, "//*[@id='password']/label/input")
     SHOW_PASSWORD_BUTTON = (By.XPATH, "//*[@id='password']/label/button")
     ENTER_BUTTON = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/button")
-    FORGOT_PASSWORD_BUTTON = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/a")
+    PASSWORD_RECOVERY_LINK = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/a")
 
 class EnterPageLocators():
     RECORD_PREVIEW = (By.XPATH, "//*[@id='rec323763270']")
@@ -31,7 +31,7 @@ class PasswordRecoveryPageLocators():
     REPEAT_PASSWORD_INPUT = (By.XPATH, "//*[@id='repeatPassword']/label/input")
     SHOW_REPEAT_PASSWORD_BUTTON = (By.XPATH, "//*[@id='repeatPassword']/label/button")
     SEND_BUTTON = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/div/button")
-    ENTER_BUTTON = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/div/a")
+    LOGIN_LINK = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/div/a")
     REPEAT_BUTTON = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/app-password-recovery-form/ui-form/div/a")
     VERIFICATION_CODE_INPUT = (By.XPATH, "//*[@id='token']/form/label/input")
     
