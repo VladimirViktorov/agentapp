@@ -1,0 +1,1 @@
+LOGIN_PAGE_URL = f"https://regress.agentapp.ru/#/login?redirect=%2Fmain"
