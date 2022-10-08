@@ -8,6 +8,7 @@ class LoginPageLocators():
     CONTAINER_INFORMATION = (By.XPATH, "/html/body/app-root/app-login/div[2]")
     LOGIN_INPUT = (By.XPATH, "//*[@id='username']/label/input")
     PASSWORD_INPUT = (By.XPATH, "//*[@id='password']/label/input")
+    SHOW_PASSWORD_BUTTON = (By.XPATH, "//*[@id='password']/label/button")
     ENTER_BUTTON = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/button")
     FORGOT_PASSWORD_BUTTON = (By.XPATH, "/html/body/app-root/app-login/div[1]/div/div/a")
 
@@ -22,3 +23,15 @@ class EnterPageLocators():
     RECORD_SCHEDULE = (By.ID, "rec323815254")
     RECORD_PROMO = (By.ID, "rec323805199")
     RECORD_NEED_HELP = (By.ID, "rec323824490")
+
+class PasswordRecoveryPageLocators():
+    LOGIN_INPUT = (By.XPATH, "//*[@id='username']/label/input")
+    PASSWORD_INPUT = (By.XPATH, "//*[@id='password']/label/input")
+    SHOW_PASSWORD_BUTTON = (By.XPATH, "//*[@id='password']/label/button")
+    REPEAT_PASSWORD_INPUT = (By.XPATH, "//*[@id='repeatPassword']/label/input")
+    SHOW_REPEAT_PASSWORD_BUTTON = (By.XPATH, "//*[@id='repeatPassword']/label/button")
+    SEND_BUTTON = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/div/button")
+    ENTER_BUTTON = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/div/a")
+    REPEAT_BUTTON = (By.XPATH, "/html/body/app-root/app-password-recovery/div/div/app-password-recovery-form/ui-form/div/a")
+    VERIFICATION_CODE_INPUT = (By.XPATH, "//*[@id='token']/form/label/input")
+    

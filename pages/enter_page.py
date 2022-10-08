@@ -5,6 +5,7 @@ from pages.locators import EnterPageLocators
 class EnterPage(BasePage):
     
     def should_be_enter_page(self):
+        self.should_be_enter_url()
         self.should_be_record_preview()
         self.should_be_record_alarm()
         self.should_be_record_forgot_password()
@@ -14,6 +15,11 @@ class EnterPage(BasePage):
         self.should_be_record_schedule()
         self.should_be_record_promo()
         self.should_be_record_need_help()
+    
+    def should_be_enter_url(self):
+        enter_url = self.browser.current_url
+        assert enter_url == ENTER_PAGE_URL, \
+            f"Enter url is not True. URL: '{enter_url}'"
     
     def should_be_record_preview(self):
         assert self.is_element_present(*EnterPageLocators.RECORD_PREVIEW), \
