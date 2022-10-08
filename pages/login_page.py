@@ -8,6 +8,8 @@ class LoginPage(BasePage):
         self.should_be_login_url()
         self.should_be_container_login_form()
         self.should_be_container_information()
+        self.should_be_login_input()
+        self.should_be_password_input()
         
     
     def should_be_login_url(self):
@@ -15,7 +17,17 @@ class LoginPage(BasePage):
         assert login_url == LOGIN_PAGE_URL, f"Login url is not True. URL: '{login_url}'"
     
     def should_be_container_login_form(self):
-        assert self.is_element_present(*LoginPageLocators.CONTAINER_LOGINFORM), "Container login form is not presented"
+        assert self.is_element_present(*LoginPageLocators.CONTAINER_LOGINFORM), \
+            "Container login form is not presented"
         
     def should_be_container_information(self):
-        assert self.is_element_present(*LoginPageLocators.CONTAINER_INFORMATION), "Container information is not presented"
+        assert self.is_element_present(*LoginPageLocators.CONTAINER_INFORMATION), \
+            "Container information is not presented"
+    
+    def should_be_login_input(self):
+        assert self.is_element_present(*LoginPageLocators.LOGIN_INPUT), \
+            "Login input is not presented"
+    
+    def should_be_password_input(self):
+        assert self.is_element_present(*LoginPageLocators.PASSWORD_INPUT), \
+            "Password input is not presented"
