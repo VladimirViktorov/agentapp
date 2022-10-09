@@ -43,3 +43,8 @@ def test_enter_valid_email_format(browser, email):
     page.open()
     page.enter_valid_email_format(email)
 
+@pytest.mark.need_review
+def test_do_not_enter_password(browser):
+    page = LoginPage(browser, URL.LOGIN_PAGE_URL)
+    page.open()
+    page.do_not_enter_password()

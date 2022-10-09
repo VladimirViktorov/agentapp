@@ -50,6 +50,10 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.LOGIN_ERROR_MESSAGE), \
             "Login error message is not presented"
     
+    def should_be_password_error_message(self):
+        assert self.is_element_present(*LoginPageLocators.PASSWORD_ERROR_MESSAGE), \
+            "Password error message is not presented"
+    
     def do_not_enter_email(self):
         login_input = self.browser.find_element(*LoginPageLocators.LOGIN_INPUT)
         login_input.click()
@@ -69,4 +73,10 @@ class LoginPage(BasePage):
         login_input.send_keys(email)
         assert self.is_not_element_present(*LoginPageLocators.LOGIN_ERROR_MESSAGE), \
             "Login error message is presented, but should not be"
-        
+    
+    def do_not_enter_password(self):
+        password_input = self.browser.find_element(*LoginPageLocators.PASSWORD_INPUT)
+        password_input.click()
+        self.should_be_password_error_message()
+        error_message = self.browser.find_element(*LoginPageLocators.PASSWORD_ERROR_MESSAGE).text
+        assert error_message == TEXT.ERROR_MESSAGE_DO_NOT_ENTER_PASSWORD, f"Wrong error message. Received message: '{error_message}'"
