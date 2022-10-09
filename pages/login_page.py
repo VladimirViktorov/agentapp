@@ -48,6 +48,12 @@ class LoginPage(BasePage):
     
     def do_not_enter_email(self):
         login_input = self.browser.find_element(*LoginPageLocators.LOGIN_INPUT)
-        login_input.send_keys()
+        login_input.click()
         error_message = self.browser.find_element(*LoginPageLocators.LOGIN_ERROR_MESSAGE).text
         assert error_message == TEXT.ERROR_MESSAGE_DO_NOT_ENTER_EMAIL, f"Wrong error message. Received message: '{error_message}'"
+    
+    def enter_wrong_format(self, email):
+        login_input = self.browser.find_element(*LoginPageLocators.LOGIN_INPUT)
+        login_input.send_keys(email)
+        error_message = self.browser.find_element(*LoginPageLocators.LOGIN_ERROR_MESSAGE).text
+        assert error_message == TEXT.ERROR_MESSAGE_ENTER_WRONG_FORMAT, f"Wrong error message. Received message: '{error_message}'"

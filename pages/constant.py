@@ -5,3 +5,4 @@ class URL():
 
 class TEXT():
     ERROR_MESSAGE_DO_NOT_ENTER_EMAIL = "Введите email"
+    ERROR_MESSAGE_ENTER_WRONG_FORMAT = "Введенный email имеет недопустимый формат"
