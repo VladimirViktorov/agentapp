@@ -27,7 +27,18 @@ def test_do_not_enter_email(browser):
                                   "mail@mail.",
                                   "mail@mail.r",
                                   f"mail@mail.{'r'*21}"])
-def test_enter_wrong_format(browser, email):
+def test_enter_wrong_email_format(browser, email):
     page = LoginPage(browser, URL.LOGIN_PAGE_URL)
     page.open()
-    page.enter_wrong_format(email)
+    page.enter_wrong_email_format(email)
+
+@pytest.mark.parametrize('email', ["m@mail.ru", 
+                                  f"{'m'*80}@mail.ru",
+                                  "mail@m.ru",
+                                  f"mail@{'m'*80}.ru",
+                                  "mail@mail.ru",
+                                  f"mail@mail.{'r'*20}"])
+def test_enter_valid_email_format(browser, email):
+    page = LoginPage(browser, URL.LOGIN_PAGE_URL)
+    page.open()
+    page.enter_valid_email_format(email)
