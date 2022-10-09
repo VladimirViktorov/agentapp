@@ -42,3 +42,4 @@ def test_enter_valid_email_format(browser, email):
     page = LoginPage(browser, URL.LOGIN_PAGE_URL)
     page.open()
     page.enter_valid_email_format(email)
+
