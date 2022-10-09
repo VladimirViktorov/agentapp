@@ -46,14 +46,20 @@ class LoginPage(BasePage):
         link = self.browser.find_element(*LoginPageLocators.PASSWORD_RECOVERY_LINK)
         link.click()
     
+    def should_be_error_message(self):
+        assert self.is_element_present(*LoginPageLocators.LOGIN_ERROR_MESSAGE), \
+            "Login error message is not presented"
+    
     def do_not_enter_email(self):
         login_input = self.browser.find_element(*LoginPageLocators.LOGIN_INPUT)
         login_input.click()
+        self.should_be_error_message()
         error_message = self.browser.find_element(*LoginPageLocators.LOGIN_ERROR_MESSAGE).text
         assert error_message == TEXT.ERROR_MESSAGE_DO_NOT_ENTER_EMAIL, f"Wrong error message. Received message: '{error_message}'"
     
     def enter_wrong_format(self, email):
         login_input = self.browser.find_element(*LoginPageLocators.LOGIN_INPUT)
         login_input.send_keys(email)
+        self.should_be_error_message()
         error_message = self.browser.find_element(*LoginPageLocators.LOGIN_ERROR_MESSAGE).text
         assert error_message == TEXT.ERROR_MESSAGE_ENTER_WRONG_FORMAT, f"Wrong error message. Received message: '{error_message}'"
